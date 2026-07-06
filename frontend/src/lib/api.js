@@ -17,6 +17,9 @@ if (!rawApiUrl) {
 if (rawApiUrl && !rawApiUrl.startsWith('http://') && !rawApiUrl.startsWith('https://')) {
   rawApiUrl = `https://${rawApiUrl}`;
 }
+if (rawApiUrl && rawApiUrl.includes('nexusflow-backend') && !rawApiUrl.includes('.onrender.com')) {
+  rawApiUrl = rawApiUrl.replace(/(nexusflow-backend(?:-[a-z0-9]+)?)/i, '$1.onrender.com');
+}
 if (rawApiUrl && !rawApiUrl.endsWith('/api') && !rawApiUrl.endsWith('/api/')) {
   rawApiUrl = rawApiUrl.endsWith('/') ? `${rawApiUrl}api` : `${rawApiUrl}/api`;
 }
