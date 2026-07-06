@@ -22,11 +22,12 @@ services:
         value: https://nexusflow-frontend.onrender.com
 
   # 2. React Frontend Static Site
-  - type: static
+  - type: web
     name: nexusflow-frontend
+    env: static
     rootDir: frontend
     buildCommand: npm run build
-    publishDir: dist
+    staticPublishPath: dist
     routes:
       # Rewrite rule for React Router SPA navigation fallback
       - type: rewrite
