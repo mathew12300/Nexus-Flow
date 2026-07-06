@@ -22,9 +22,8 @@ services:
         value: https://nexusflow-frontend.onrender.com
 
   # 2. React Frontend Static Site
-  - type: web
+  - type: static
     name: nexusflow-frontend
-    env: static
     rootDir: frontend
     buildCommand: npm run build
     publishDir: dist
