@@ -39,4 +39,4 @@ services:
         fromService:
           type: web
           name: nexusflow-backend
-          property: url
+          property: host
