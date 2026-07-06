@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+let rawApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+if (rawApiUrl && !rawApiUrl.endsWith('/api') && !rawApiUrl.endsWith('/api/')) {
+  rawApiUrl = rawApiUrl.endsWith('/') ? `${rawApiUrl}api` : `${rawApiUrl}/api`;
+}
+const BASE_URL = rawApiUrl;
 
 const ACCESS_KEY = 'nexusflow_access';
 const REFRESH_KEY = 'nexusflow_refresh';

@@ -36,4 +36,7 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_URL
-        value: https://nexusflow-backend.onrender.com
+        fromService:
+          type: web
+          name: nexusflow-backend
+          property: url
