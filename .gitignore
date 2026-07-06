@@ -1,0 +1,20 @@
+# Python virtual environments and caches
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+backend/db.sqlite3
+backend/staticfiles/
+backend/*.log
+
+# Node dependencies and builds
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/*.log
+
+# OS & IDE folders
+.DS_Store
+.vscode/
+.idea/
+*.log

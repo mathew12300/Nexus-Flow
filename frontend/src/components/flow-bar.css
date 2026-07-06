@@ -1,0 +1,57 @@
+.flowbar {
+  display: flex;
+  width: 100%;
+  border-radius: 100px;
+  overflow: hidden;
+  background: var(--surface-sunken);
+}
+
+.flowbar-seg {
+  position: relative;
+  height: 100%;
+  transition: width 0.4s var(--ease-out);
+}
+
+.flowbar-seg + .flowbar-seg {
+  border-left: 2px solid var(--surface);
+}
+
+.flowbar-seg-active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: flow-shimmer 2.6s linear infinite;
+}
+
+@keyframes flow-shimmer {
+  0% { background-position: 150% 0; }
+  100% { background-position: -50% 0; }
+}
+
+.flowbar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.flowbar-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.flowbar-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}

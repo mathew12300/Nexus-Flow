@@ -1,0 +1,129 @@
+/* ==========================================================================
+   NexusFlow design tokens
+   --------------------------------------------------------------------------
+   Concept: work moving through a system — a current, not a checklist.
+   The signature visual (see FlowBar.jsx) is a segmented horizontal bar
+   representing how work is distributed across stages/roles, with a slow
+   animated shimmer on the active segment. Palette and type both support
+   that idea: an "electric" indigo for momentum, teal for resolution, amber
+   for things stalling, on a cool paper-slate base (never pure white/black).
+   ========================================================================== */
+
+:root {
+  /* ---- surfaces ---- */
+  --bg: #F3F4F7;
+  --surface: #FFFFFF;
+  --surface-sunken: #EAEBF0;
+  --surface-inverted: #12141C;
+
+  /* ---- ink ---- */
+  --ink: #12141C;
+  --ink-muted: #5B6072;
+  --ink-faint: #9298A8;
+  --ink-on-inverted: #F3F4F7;
+
+  /* ---- lines ---- */
+  --line: #E1E3EA;
+  --line-strong: #C9CCD6;
+
+  /* ---- brand / flow ---- */
+  --flow: #4C4FE0;
+  --flow-strong: #3638B8;
+  --flow-soft: #EBEBFB;
+  --flow-text-on-soft: #34359F;
+
+  /* ---- current (success / resolved) ---- */
+  --current: #12967E;
+  --current-soft: #E4F5F1;
+  --current-text-on-soft: #0D6F5D;
+
+  /* ---- stall (warning / at risk) ---- */
+  --stall: #C4821F;
+  --stall-soft: #FBF0DD;
+  --stall-text-on-soft: #8F5E11;
+
+  /* ---- blocked (danger) ---- */
+  --blocked: #C0432E;
+  --blocked-soft: #FBE9E5;
+  --blocked-text-on-soft: #8E2F1E;
+
+  /* ---- role accents (viewer -> owner escalation) ---- */
+  --role-viewer: #8890A3;
+  --role-member: #4C4FE0;
+  --role-admin: #C4821F;
+  --role-owner: #12141C;
+
+  /* ---- type ---- */
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+
+  /* ---- radius / shadow ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-card: 0 1px 2px rgba(18, 20, 28, 0.04), 0 6px 20px rgba(18, 20, 28, 0.05);
+  --shadow-pop: 0 8px 30px rgba(18, 20, 28, 0.14);
+
+  /* ---- motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 150ms var(--ease-out);
+  --transition-normal: 250ms var(--ease-out);
+}
+
+/* ---- dark theme variables ---- */
+:root[data-theme="dark"] {
+  /* ---- surfaces ---- */
+  --bg: #0A0B10;
+  --surface: #12131C;
+  --surface-sunken: #171822;
+  --surface-inverted: #FFFFFF;
+
+  /* ---- ink ---- */
+  --ink: #F3F4F7;
+  --ink-muted: #9BA1B6;
+  --ink-faint: #5E6377;
+  --ink-on-inverted: #12141C;
+
+  /* ---- lines ---- */
+  --line: #202231;
+  --line-strong: #2F3247;
+
+  /* ---- brand / flow ---- */
+  --flow: #6366F1;
+  --flow-strong: #818CF8;
+  --flow-soft: rgba(99, 102, 241, 0.15);
+  --flow-text-on-soft: #A5B4FC;
+
+  /* ---- current (success / resolved) ---- */
+  --current: #10B981;
+  --current-soft: rgba(16, 185, 129, 0.15);
+  --current-text-on-soft: #34D399;
+
+  /* ---- stall (warning / at risk) ---- */
+  --stall: #F59E0B;
+  --stall-soft: rgba(245, 158, 11, 0.15);
+  --stall-text-on-soft: #FBBF24;
+
+  /* ---- blocked (danger) ---- */
+  --blocked: #EF4444;
+  --blocked-soft: rgba(239, 68, 68, 0.15);
+  --blocked-text-on-soft: #FCA5A5;
+
+  /* ---- role accents ---- */
+  --role-viewer: #6B7280;
+  --role-member: #6366F1;
+  --role-admin: #F59E0B;
+  --role-owner: #FFFFFF;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-pop: 0 12px 40px rgba(0, 0, 0, 0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
