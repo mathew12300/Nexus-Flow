@@ -1,6 +1,19 @@
 import axios from 'axios';
 
-let rawApiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api';
+let rawApiUrl = import.meta.env.VITE_API_URL;
+
+// If on Render and no API URL is set, dynamically resolve backend from current frontend domain
+if (!rawApiUrl && typeof window !== 'undefined' && window.location.hostname.includes('onrender.com')) {
+  const currentHost = window.location.hostname;
+  const backendHost = currentHost.replace('nexusflow-frontend', 'nexusflow-backend');
+  rawApiUrl = `https://${backendHost}/api`;
+}
+
+// Fallback to local server
+if (!rawApiUrl) {
+  rawApiUrl = 'http://127.0.0.1:8000/api';
+}
+
 if (rawApiUrl && !rawApiUrl.startsWith('http://') && !rawApiUrl.startsWith('https://')) {
   rawApiUrl = `https://${rawApiUrl}`;
 }
